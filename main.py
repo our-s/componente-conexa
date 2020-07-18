@@ -1,3 +1,5 @@
+import sys
+
 class Grafo(object):
     def __init__(grafo, path=''):
         grafo._adj = []
@@ -58,6 +60,7 @@ class ComponentesConexas(object):
         return componenteConexa._contador
 
 if __name__ == '__main__':
+    sys.setrecursionlimit(2000)  # add to run without recursionError
     grafo = Grafo('cenario3.txt')
     componenteConexa = ComponentesConexas(grafo)
     numeroComponentes = componenteConexa.obterComponentes()
